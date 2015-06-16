@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ScoreDao">
+	<resultMap id="scoremap" type="Score">
+		<id property="id" column="id" />
+		<result property="userId" column="user_id" />
+		<result property="score" column="score" />
+	</resultMap>
+
+	<select id="getRankScore"
+		resultMap="scoremap">
+		SELECT
+		t.user_id, t.score FROM t_score AS t WHERE 1=1
+		group by t.user_id
+		order by t.score desc limit 10;
+	</select>
+	
+	<insert id="saveScoreBatch" parameterType="list"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_score(user_id,score,usetime)
+		values
+		<foreach collection="scoreList" item="item" index="index"
+			open="" close="" separator=",">
+			(#{item.userId,jdbcType=INTEGER},#{item.score,jdbcType=INTEGER},#{item.usetime,jdbcType=INTEGER},#{item.finishtime,jdbctype=DATE})
+		</foreach>
+	</insert>
+</mapper>

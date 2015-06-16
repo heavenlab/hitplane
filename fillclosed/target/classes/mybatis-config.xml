@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="org.apache.ibatis.type.EnumTypeHandler" alias="EnumTypeHandler" />
+        <typeAlias type="org.apache.ibatis.type.EnumOrdinalTypeHandler" alias="EnumOrdinalTypeHandler" />
+        <typeAlias type="com.ax.fillclosed.bo.User" alias="User" />
+        <typeAlias type="com.ax.fillclosed.bo.Score" alias="Score" />
+    </typeAliases>
+
+   <!--  <typeHandlers>
+        <typeHandler handler="com.baidu.rigel.appclue.analy.common.mybatis.handler.JodaDateTimeTypeHandler" />
+    </typeHandlers> -->
+
+</configuration>
