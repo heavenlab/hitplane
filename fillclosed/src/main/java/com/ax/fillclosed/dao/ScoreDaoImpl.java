@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.ax.fillclosed.bo.Score;
-import com.ax.fillclosed.condition.ScoreQueryCondition;
+
 @Repository("scoreDao")
 public class ScoreDaoImpl extends SqlSessionDaoSupport implements ScoreDao {
 	@Override
