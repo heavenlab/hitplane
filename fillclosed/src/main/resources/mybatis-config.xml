@@ -10,8 +10,6 @@
         <typeAlias type="com.ax.fillclosed.bo.Score" alias="Score" />
     </typeAliases>
 
-   <!--  <typeHandlers>
-        <typeHandler handler="com.baidu.rigel.appclue.analy.common.mybatis.handler.JodaDateTimeTypeHandler" />
-    </typeHandlers> -->
+  
 
 </configuration>
